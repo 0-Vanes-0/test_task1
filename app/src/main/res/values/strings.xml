@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TestHotel</string>
+    <string name="hotel">Отель</string>
+    <string name="hi_world">Привет, мир</string>
 </resources>
