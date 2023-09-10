@@ -1,10 +1,12 @@
-package com.example.testhotel;
+package com.example.testhotel.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+
+import com.example.testhotel.R;
 
 public class ReserveActivity extends AppCompatActivity {
 

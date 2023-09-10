@@ -1,4 +1,4 @@
-package com.example.testhotel;
+package com.example.testhotel.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -8,9 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
-import java.util.List;
+import com.example.testhotel.DataLoader;
+import com.example.testhotel.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,9 +51,8 @@ public class MainActivity extends AppCompatActivity {
         peculiarityText = findViewById(R.id.peculiarityText);
         descriptionText = findViewById(R.id.descriptionText);
 
-        // TODO: make livedata models later
-        hotelImageView.setImageBitmap(DataLoader.getBitmapMain(2));
-
+        // TODO: make livedata models and observers later
+        hotelImageView.setImageBitmap(DataLoader.getBitmapsMain().get(2));
         nameText.setText(DataLoader.getDataMain("name"));
         addressText.setText(DataLoader.getDataMain("adress"));
         minimalPriceText.setText(DataLoader.getDataMain("minimal_price"));
@@ -62,15 +61,7 @@ public class MainActivity extends AppCompatActivity {
         ratingNameText.setText(DataLoader.getDataMain("rating_name"));
         descriptionText.setText(DataLoader.getDataMain("description"));
 
-        List<String> peculiarities = DataLoader.getArrayDataMain("peculiarities");
-        StringBuilder buffer = new StringBuilder();
-        for (int i = 0; i < peculiarities.size(); i++) {
-            buffer.append(peculiarities.get(i));
-            if (i < peculiarities.size() - 1) {
-                buffer.append(", ");
-            }
-        }
-        peculiarityText.setText(buffer.toString());
+        peculiarityText.setText(String.join(", ", DataLoader.getArrayDataMain("peculiarities")));
     }
 
     @Override
